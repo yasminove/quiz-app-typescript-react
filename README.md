@@ -1,7 +1,7 @@
 
 
 # View the app: 
- ## You can see a demo for the app [here]:(https://quiz-app-typescript-react.netlify.app)
+ ## You can see a demo for the app [here](https://quiz-app-typescript-react.netlify.app)
 
 
 
