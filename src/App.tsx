@@ -37,6 +37,7 @@ function App() {
       setGameOver(false);
       setNumber(0);
       setStart(true)
+      setScore(0)
 
   };
 
