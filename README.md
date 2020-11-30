@@ -1,3 +1,11 @@
+
+
+# View the app: 
+ ## You can see a demo for the app [here]:(https://quiz-app-typescript-react.netlify.app)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
