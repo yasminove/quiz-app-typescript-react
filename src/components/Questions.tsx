@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Card, Button }  from '@material-ui/core';
+import { Card }  from '@material-ui/core';
 
 export type Question = {
     answers: string[],
