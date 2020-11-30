@@ -20,7 +20,8 @@ function App() {
   const [ number, setNumber ] = useState(0); 
   const [ answers, setAnswer ] = useState<AnswerObject[]>([]);
   const [ gameOver, setGameOver ] = useState(true)
-
+  const [ start, setStart ] = useState(false)
+  const [ score, setScore ] = useState(0)
   const startTrivia = async () => {
 
       console.log('kkk');
@@ -35,6 +36,7 @@ function App() {
       setLoading(false);
       setGameOver(false);
       setNumber(0);
+      setStart(true)
 
   };
 
@@ -46,13 +48,17 @@ function App() {
     // console.log(e.target, 'e.target');
     console.log(e.currentTarget.innerHTML, 'e.currentTarget.TEXT_NODE');
     const answer = e.currentTarget.innerHTML;
+    const correct = questions[number].correct_answer === answer;
     const userAnswer = {
       answer,
-      correct: questions[number].correct_answer === answer,
+      correct,
       question: questions[number].question, 
       correct_answer: questions[number].correct_answer
     }
     setAnswer(prev => [...prev, userAnswer])
+    if(correct){
+      setScore(prev => prev + 1)
+    }
   };
 
   console.log(answers, 'answers');
@@ -93,6 +99,8 @@ function App() {
         {' '}
         Start
       </Button>
+      {!loading && start && !gameOver? (<h6>Question Number: {number + 1}</h6>) : null}
+      {!loading && start ? <h6>Score: {score}</h6> : null }
       {!loading && questions[number]?.answers.length > 0 ? (
         <QuestionCard
           answers={questions[number]?.answers}
@@ -125,6 +133,7 @@ function App() {
           Next
         </Button>
       ) : null}
+
     </div>
   );
 }
